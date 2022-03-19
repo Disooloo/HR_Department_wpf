@@ -65,7 +65,8 @@
                 <CheckBox Content="Запомнить меня" HorizontalAlignment="Stretch" Cursor="Hand"></CheckBox>
                 <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Height="40" Width="80" Margin="50,0,0,0" >Войти</Button>
+                        Height="40" Width="80" Margin="50,0,0,0" 
+                        Click="loginEnter">Войти</Button>
             </StackPanel>
         </Grid>
     </Grid>

@@ -24,3 +24,35 @@ C:\Users\kroli\Documents\dev\project\WPF\HR Department\HR Department\obj\Debug\H
 C:\Users\kroli\Documents\dev\project\WPF\HR Department\HR Department\obj\Debug\HR Department.pdb
 C:\Users\kroli\Documents\dev\project\WPF\HR Department\HR Department\obj\Debug\views\layouts\LoginWindow.g.cs
 C:\Users\kroli\Documents\dev\project\WPF\HR Department\HR Department\obj\Debug\views\layouts\LoginWindow.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.AssemblyReference.cache
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.SuggestedBindingRedirects.cache
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\MainWindow.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\LoginWindow.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\App.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department_MarkupCompile.cache
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department_MarkupCompile.lref
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.exe
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.pdb
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\CustomControl\ListBoxItemCustom.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department_Content.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\HR Department.exe.config
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\HR Department.exe
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\HR Department.pdb
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\MaterialDesign.Icons.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\MaterialDesignColors.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\MaterialDesignColors.pdb
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\CompanyListWindow.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\App.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\Assets\myIcons.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\MainWindow.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\CompanyListWindow.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\CustomControl\ListBoxItemCustom.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\LoginWindow.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.g.resources
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR_Department.Properties.Resources.resources
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.GenerateResource.cache
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.CoreCompileInputs.cache
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.CopyComplete

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kroli\Documents\dev\project\WPF\HR Department\HR Department\obj\Debug\
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\
 HR_Department
 none
 false
 DEBUG;TRACE
-C:\Users\kroli\Documents\dev\project\WPF\HR Department\HR Department\App.xaml
-21510259395
-
-71787820065
-171753999583
-MainWindow.xaml;views\layouts\LoginWindow.xaml;
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\App.xaml
+5-714426622
+1-794738835
+91705016067
+17-1082713566
+Assets\myIcons.xaml;MainWindow.xaml;views\layouts\CompanyListWindow.xaml;views\layouts\CustomControl\ListBoxItemCustom.xaml;views\layouts\LoginWindow.xaml;
 
 False
 

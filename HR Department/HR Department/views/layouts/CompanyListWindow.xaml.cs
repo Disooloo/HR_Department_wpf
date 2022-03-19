@@ -15,15 +15,27 @@ using System.Windows.Shapes;
 namespace HR_Department.views.layouts
 {
     /// <summary>
-    /// Логика взаимодействия для LoginWindow.xaml
+    /// Логика взаимодействия для CompanyListWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class CompanyListWindow : Window
     {
-        public LoginWindow()
+        public CompanyListWindow()
         {
             InitializeComponent();
         }
 
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimase_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Minimized; 
+            }
+        }
 
         private void dragme(object sender, MouseButtonEventArgs e)
         {
@@ -36,19 +48,6 @@ namespace HR_Department.views.layouts
 
                 //throw;
             }
-        }
-
-        private void CloseLogin(object sender, MouseButtonEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void loginEnter(object sender, RoutedEventArgs e)
-        {
-            CompanyListWindow  companyWindow = new CompanyListWindow();
-            companyWindow.Show();
-            this.Close();
-
         }
     }
 }
