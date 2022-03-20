@@ -7,12 +7,11 @@
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         xmlns:CustomControl="clr-namespace:InternetDownloadManagerRedesign.CustomControl"
-        Background="Transparent"
+ 
         AllowsTransparency="True"
-        Title="MainWindow" Height="585" Width="930"
+        Title="MainWindow" Height="685" Width="1030"
         ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
-        FontSize="15" MouseLeftButtonDown="dragme">
+        FontSize="15" MouseLeftButtonDown="dragme" Closing="Window_Closing">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -69,230 +68,98 @@
             </Style>
         </ResourceDictionary>
     </Window.Resources>
-    <Border
+    <Grid Background="#FFEEEEEE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="612*"/>
+        </Grid.RowDefinitions>
+        <Border
         CornerRadius="15"
         Background="#EEF3F5">
-        <Grid Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <!--Menu-->
-                <RowDefinition Height="Auto"/>
-                <!--Option Buttons-->
-                <RowDefinition/>
-                <!--Download List-->
-            </Grid.RowDefinitions>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!--Menu-->
+                    <RowDefinition Height="Auto"/>
+                    <!--Option Buttons-->
+                    <RowDefinition/>
+                    <!--Download List-->
+                </Grid.RowDefinitions>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-                <!--Logo-->
-                <Image
+                    <!--Logo-->
+                    <Image
                     Source="/assets/img/logo.png"
                     Height="30"
                     Width="30" />
 
-                <!--Menu-->
-                <Menu
+                    <!--Menu-->
+                    <Menu
                     Grid.Column="1"
                     Margin="10,0"
                     FontSize="15"
                             Foreground="#41535A"
                     VerticalAlignment="Center"
                     Background="Transparent">
-                    <MenuItem
+                        <MenuItem
                         Padding="20,0"
                     Header="Меню">
 
-                        <MenuItem
+                            <MenuItem
                         Padding="20,0"
                             Background="#EEF3F5"
                             Header="Лицензия" />
 
-                        <MenuItem
+                            <MenuItem
                         Padding="20,5"
                             Background="#EEF3F5"
                             Header="Выйти" />
 
-                        <MenuItem
+                            <MenuItem
                         Padding="20,0"
                             Background="#EEF3F5"
                             Header="Параметры" />
 
-                    </MenuItem>
-                    <MenuItem
+                        </MenuItem>
+                        <MenuItem
                         Padding="20,0"
                     Header="Настройки"/>
-                    <MenuItem
+                        <MenuItem
                         Padding="20,0"
                     Header="Помощь"/>
 
-                </Menu>
-                <StackPanel
+                    </Menu>
+
+                    <StackPanel
                     Grid.Column="2"
                     Orientation="Horizontal">
 
-                    <Button
+                        <Button
                         HorizontalAlignment="Right"
                         Background="Transparent" BorderBrush="{x:Null}" Cursor="Hand"
                         Name="Minimase" Click="Minimase_Click">
-                        <materialDesign:PackIcon Kind="WindowMinimize" Width="25" Height="25" Cursor="Hand" Foreground="#000" ></materialDesign:PackIcon>
-                    </Button>
+                            <materialDesign:PackIcon Kind="WindowMinimize" Width="25" Height="25" Cursor="Hand" Foreground="#000" ></materialDesign:PackIcon>
+                        </Button>
 
-                    <Button
+                        <Button
                         HorizontalAlignment="Right"
                         Background="Transparent" BorderBrush="{x:Null}" Cursor="Hand"
                         Name="close" Click="close_Click"
                         >
-                        <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand" Foreground="#000" ></materialDesign:PackIcon>
-                    </Button>
-                </StackPanel>
+                            <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand" Foreground="#000" ></materialDesign:PackIcon>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+
+
             </Grid>
-
-
-            <!--Option Buttons-->
-            <StackPanel 
-                Margin="0,5"
-                Orientation="Horizontal"
-                Grid.Row="1">
-                
-                <Border
-                    Background="#D5E0E5"
-                    CornerRadius="15"
-                    Margin="15,0"
-                    Padding="20">
-                    <Button
-                        Background="Transparent"
-                        BorderThickness="0"
-                        VerticalContentAlignment="Center" Style="{DynamicResource ButtonStyle1}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <!--Icon (Add Url)-->
-                                <ColumnDefinition/>
-                                <!--Text-->
-                            </Grid.ColumnDefinitions>
-                            <Border 
-                                    Width="30">
-                                <materialDesign:PackIcon Kind="PlusCircle" Width="25" Height="25" Cursor="Hand" Margin="5,5,0,0"></materialDesign:PackIcon>
-                            </Border>
-
-                            <TextBlock
-                                Foreground="#41535A"
-                                FontWeight="SemiBold"
-                                Grid.Column="1"
-                                Padding="6,0"
-                                Text="Добавить компанию"
-                                Cursor="Hand"
-                                VerticalAlignment="Center"/>
-                        </Grid>
-                    </Button>
-                </Border>
-
-              
-            </StackPanel>
-
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-
-                <Border 
-                    Background="White"
-                    BorderBrush="#CBD7DC"
-                    BorderThickness="1"
-                    CornerRadius="15"
-                    Grid.Column="1"
-                    Padding="10">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <!--Header-->
-                            <RowDefinition/>
-                            <!--Rows-->
-                        </Grid.RowDefinitions>
-
-                        <!--Header-->
-                        <Border
-                            Background="#D5E0E5"
-                            CornerRadius="15"
-                            Height="40">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-
-                                <!--NameCompany-->
-                                <Grid>
-                                    <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="10,0"
-                                    Text="Наименовании компании"
-                                    VerticalAlignment="Center"/>
-
-                                    <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                                </Grid>
-
-                                <!--HeroCompany-->
-                                <Grid Grid.Column="1">
-                                    <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="40,0"
-                                    Text="Руководитель"
-                                    VerticalAlignment="Center"/>
-
-                                    <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                                </Grid>
-
-                                <!--Action-->
-                                <Grid Grid.Column="4">
-                                    <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="10,0"
-                                    Text="Действие"
-                                    VerticalAlignment="Center"/>
-
-                                    <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                                </Grid>
-
-                            
-                            </Grid>
-                        </Border>
-
-
-                        <!--Rows-->
-                        <ItemsControl
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Grid.Row="1"
-                            HorizontalContentAlignment="Stretch">
-                            <!--Guys, most of you complain that your custom control is not working.. most of the time it is due to not initializing this line above.-->
-                           
-                        </ItemsControl>
-                    </Grid>
-                </Border>
-            </Grid>
-        </Grid>
-    </Border>
+        </Border>
+        <Frame Background="#FFEEEEEE" Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+    </Grid>
 </Window>

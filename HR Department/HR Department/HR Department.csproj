@@ -66,14 +66,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Manager.cs" />
     <Compile Include="views\layouts\CompanyListWindow.xaml.cs">
       <DependentUpon>CompanyListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="views\layouts\CustomControl\ListBoxItemCustom.xaml.cs">
-      <DependentUpon>ListBoxItemCustom.xaml</DependentUpon>
-    </Compile>
     <Compile Include="views\layouts\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pages\CompanyListPage.xaml.cs">
+      <DependentUpon>CompanyListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="views\pages\ShowCompanyPage.xaml.cs">
+      <DependentUpon>ShowCompanyPage.xaml</DependentUpon>
     </Compile>
     <Page Include="Assets\myIcons.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,11 +99,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="views\layouts\CustomControl\ListBoxItemCustom.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="views\layouts\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pages\CompanyListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\pages\ShowCompanyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,9 +139,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="views\pages\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\img\hr.jpg" />
   </ItemGroup>

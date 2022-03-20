@@ -1,0 +1,196 @@
+﻿<Page x:Class="HR_Department.views.pages.ShowCompanyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR_Department.views.pages"
+      mc:Ignorable="d" 
+       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Height="685" Width="1030"
+      Title="ShowCompanyPage">
+
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="686" VerticalAlignment="Top" Width="1030" Margin="0,2,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.982,0.5" StartPoint="0.023,0.5">
+                    <GradientStop Color="#FF000040" Offset="1"/>
+                    <GradientStop Color="#FF010121"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="678" VerticalAlignment="Top" Width="89" Margin="-1,2,0,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.898,0.52" StartPoint="-0.001,0.521">
+                    <GradientStop Color="#FF050546" Offset="0"/>
+                    <GradientStop Color="#FF02024F" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" Fill="#FF4777F5" HorizontalAlignment="Left" Height="50.711" Margin="20,11,0,0" Stretch="Fill" VerticalAlignment="Top" Width="47"/>
+        <Image HorizontalAlignment="Left" Height="31" Margin="28,21,0,0" VerticalAlignment="Top" Width="31" />
+
+        <materialDesign:PackIcon  Kind="PlusCircleOutline" Width="25" Height="25" Cursor="Hand" Foreground="#fff" Margin="31,114,0,0"></materialDesign:PackIcon>
+        <TextBlock HorizontalAlignment="Left" Height="15" Margin="-1,151,0,0" TextWrapping="Wrap" Text="Вакансия" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" TextAlignment="Center"/>
+
+        <Image HorizontalAlignment="Left" Height="25" Margin="31,191,0,0" VerticalAlignment="Top" Width="25" />
+        <TextBlock HorizontalAlignment="Left" Height="15" Margin="-1,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" TextAlignment="Center"/>
+        <Image HorizontalAlignment="Left" Height="25" Margin="31,258,0,0" VerticalAlignment="Top" Width="25" />
+        <TextBlock HorizontalAlignment="Left" Height="15" Margin="-1,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" TextAlignment="Center"/>
+        <Image HorizontalAlignment="Left" Height="25" Margin="31,325,0,0" VerticalAlignment="Top" Width="25" />
+        <TextBlock HorizontalAlignment="Left" Height="15" Margin="-1,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="136,21,0,0" TextWrapping="Wrap" Text="Понедельник, 20.03.2022" VerticalAlignment="Top" Width="150" Foreground="White"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="136,39,0,0" TextWrapping="Wrap" Text="5:15 PM" VerticalAlignment="Top" Width="133" Foreground="White"/>
+        <Rectangle Fill="#7F050546" HorizontalAlignment="Left" Height="58" Margin="820,2,0,0" VerticalAlignment="Top" Width="209"/>
+        <Image HorizontalAlignment="Left" Height="25" Margin="660,13,0,0" VerticalAlignment="Top" Width="25" />
+        <Image HorizontalAlignment="Left" Height="25" Margin="839,18,0,0" VerticalAlignment="Top" Width="24" />
+
+        <Ellipse Fill="#FF00FB89" HorizontalAlignment="Left" Height="10" Margin="1009,36,0,0" VerticalAlignment="Top" Width="10" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
+
+        <TextBlock HorizontalAlignment="Left" Height="24" Margin="136,81,0,0" TextWrapping="Wrap" Text="Рабочая область" VerticalAlignment="Top" Width="144" Foreground="White" FontSize="18"/>
+        <Rectangle Fill="#FF050546" HorizontalAlignment="Left" Height="151" Margin="168,124,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5"/>
+        <Rectangle Fill="#FF050546" HorizontalAlignment="Left" Height="151" Margin="168,302,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5"/>
+        <Rectangle Fill="#FF050546" HorizontalAlignment="Left" Height="151" Margin="560,121,0,0" VerticalAlignment="Top" Width="334" RadiusY="5" RadiusX="5"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="195,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Foreground="White"><Run Language="ru-ru" Text="Наименование компании"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <Grid Margin="348,135,528,341"/>
+        <Grid Margin="432,135,444,341">
+            <Ellipse Fill="#FF04041F" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Margin="26,0,0,0"/>
+            <Image HorizontalAlignment="Left" Height="14.666" Margin="4.664,4.665,0,0" VerticalAlignment="Top" Width="14.667" />
+
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Height="56" Margin="162,202,0,0" TextWrapping="Wrap" Text="ООО рога и копыта" VerticalAlignment="Top" Width="333" Foreground="White" FontSize="24" TextAlignment="Center"/>
+        <Path Data="M139,276 L189.73054,224 415.26946,224 464,276 z" HorizontalAlignment="Left" Height="65" Margin="169,197,0,0" Stretch="Fill" VerticalAlignment="Top" Width="334" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.591"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.722"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#00000000" Offset="1"/>
+                    <GradientStop Color="#33FFFFFF"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Grid Margin="162,313,565,149">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="34,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="74,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Программист"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="74,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF898989"><Run Language="ru-ru" Text="детали"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Grid Margin="162,360,565,102">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="34,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="74,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Системник"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="74,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF898989"><Run Language="ru-ru" Text="детали"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Grid Margin="162,406,565,56">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="34,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="74,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Секретарь&#x9;"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="74,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF898989"><Run Language="ru-ru" Text="детали"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="204,355,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF"/>
+        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="204,403,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF"/>
+        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="281,377,0,0" Stretch="Fill" VerticalAlignment="Top" Width="118" Stroke="#33FFFFFF" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <TextBlock HorizontalAlignment="Left" Height="80" Margin="378,314,0,0" TextWrapping="Wrap" Text="15" VerticalAlignment="Top" Width="94" Foreground="White" FontSize="72" RenderTransformOrigin="1.27,0.446"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="362,397,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Всего вакансий"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <Image HorizontalAlignment="Left" Height="20" Margin="410,336,0,0" VerticalAlignment="Top" Width="20" />
+        <Rectangle Fill="#FF04041F" HorizontalAlignment="Left" Height="20" Margin="419,423,0,0" VerticalAlignment="Top" Width="70" RadiusY="11.007" RadiusX="11.007"/>
+        <TextBlock HorizontalAlignment="Left" Height="11" Margin="419,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" Foreground="#FFAEABAB" FontSize="10" TextAlignment="Center"><Run Language="ru-ru" Text="Смотреть"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="585,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Сотрудники"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <Grid Margin="535,165,232,297">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="50,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Иващенко И.У"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF04F794"><Run Language="ru-ru" Text="Программист"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Grid Margin="535,213,232,249">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="50,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Text="Ивартин А"/><Run Language="ru-ru" Text="."/><LineBreak/><Run Language="ru-ru"/><Run Text="А"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF04F794"><Run Language="ru-ru" Text="Программист"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Grid Margin="694,165,73,297">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="50,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Адам"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF04F794"><Run Language="ru-ru" Text="Программист"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <TextBlock Height="40" FontSize="24" Margin="182,-165,-58,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"><Run Language="ru-ru" Text="Иванов И.В"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Grid Margin="694,213,73,249">
+            <Path Data="M191.5,89.5 L172.5,100.5 172.5,120 191.5,130.5 210.5,120.5 210.5,100 z" HorizontalAlignment="Left" Height="38" Stretch="Fill" VerticalAlignment="Top" Width="35" Stroke="White" Margin="50,0,0,0">
+                <Path.Fill>
+                    <ImageBrush  Stretch="UniformToFill"/>
+                </Path.Fill>
+            </Path>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="White"><Run Language="ru-ru" Text="Адам"/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Height="17" Margin="91,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" Foreground="#FF04F794"><Run Language="ru-ru" Text="Программист"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+
+        </Grid>
+        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="579,209,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF"/>
+        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="735,208,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF"/>
+        <Path Data="M205,360.921 L297,359.921" Fill="White" HorizontalAlignment="Left" Height="1" Margin="735,256,0,0" Stretch="Fill" VerticalAlignment="Top" Width="92" Stroke="#33FFFFFF"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="585,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Foreground="White"/>
+        <Grid Margin="772,313,104,163">
+            <Ellipse Fill="#FF04041F" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" RenderTransformOrigin="0.562,0.542" Margin="-313,5,0,0"/>
+            <Image HorizontalAlignment="Left" Height="14.666" Margin="4.664,4.665,0,0" VerticalAlignment="Top" Width="14.667" />
+            <Ellipse Fill="#FF04041F" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Margin="55,216,0,0" RenderTransformOrigin="0.562,0.542"/>
+            <Ellipse Fill="#FF04041F" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Margin="58,223,0,0" RenderTransformOrigin="0.562,0.542"/>
+
+        </Grid>
+        <Grid Margin="807,313,69,141">
+            <Ellipse Fill="#FF04041F" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="24" Margin="48,-180,0,0"/>
+            <Image HorizontalAlignment="Left" Height="14.666" Margin="4.664,4.665,0,0" VerticalAlignment="Top" Width="14.667" />
+
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="101" Margin="591,345,0,0" VerticalAlignment="Top" Width="299" />
+
+    </Grid>
+
+</Page>
