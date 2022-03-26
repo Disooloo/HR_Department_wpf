@@ -58,3 +58,13 @@ C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\o
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\CompanyListPage.baml
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\ShowCompanyPage.g.cs
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\ShowCompanyPage.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\EntityFramework.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\EntityFramework.xml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\CompanyStorePage.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\CompanyStorePage.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\XamlAnimatedGif.dll
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\XamlAnimatedGif.pdb
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

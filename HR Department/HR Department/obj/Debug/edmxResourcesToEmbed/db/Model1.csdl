@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HR_DepartmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Nullable="false" Type="Int32" />
+    <Property Name="companyName" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="CompanyManager" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="vacancy_isActive" Type="Boolean" />
+    <Property Name="id_vacancy" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="HR_DepartmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="company" EntityType="Self.company" />
+    <EntitySet Name="teams" EntityType="Self.teams" />
+    <EntitySet Name="sysdiagrams" EntityType="HR_DepartmentModel.sysdiagrams" />
+    <EntitySet Name="vacancy_db" EntityType="HR_DepartmentModel.vacancy_db" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="vacancy_db">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="Company_id" Type="Int32" />
+    <Property Name="v_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="v_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="v_count" Type="Int32" />
+    <Property Name="v_img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="v_isActive" Type="Boolean" />
+    <Property Name="v_data" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>
