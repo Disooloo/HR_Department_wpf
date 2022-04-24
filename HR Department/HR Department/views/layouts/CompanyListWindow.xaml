@@ -16,7 +16,7 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/assets/myIcons.xaml"/>
+                
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="OptionBorderStyle" TargetType="{x:Type Border}">
@@ -109,7 +109,7 @@
                     Background="Transparent">
                         <MenuItem
                         Padding="20,0"
-                    Header="Меню">
+                    Header="Файл">
 
                             <MenuItem
                         Padding="20,0"
@@ -117,22 +117,48 @@
                             Header="Лицензия" />
 
                             <MenuItem
-                        Padding="20,5"
+                        Padding="20,0"
                             Background="#EEF3F5"
-                            Header="Выйти" />
+                            Header="Параметры" >
+                               
+                            </MenuItem>
 
                             <MenuItem
                         Padding="20,0"
                             Background="#EEF3F5"
-                            Header="Параметры" />
+                            Header="Помощь" >
 
+                            </MenuItem>
+
+                            <MenuItem
+                        Padding="20,5"
+                            Background="#EEF3F5"
+                            Header="Выйти" />
                         </MenuItem>
+
                         <MenuItem
-                        Padding="20,0"
-                    Header="Настройки"/>
-                        <MenuItem
-                        Padding="20,0"
-                    Header="Помощь"/>
+                        Padding="20,5"
+                            Background="#EEF3F5"
+                            Header="Меню" >
+
+                            <MenuItem
+                        Padding="20,5"
+                            Background="#EEF3F5"
+                            Header="Компании" 
+                                Name="company"
+                                Click="company_Click">
+
+                                </MenuItem>
+
+                            <MenuItem
+                            Padding="20,5"
+                            Background="#EEF3F5"
+                            Header="Вакансии"
+                                Name="vacancy"
+                                Click="vacancy_Click">
+                            </MenuItem>
+                        </MenuItem>
+
 
                     </Menu>
 

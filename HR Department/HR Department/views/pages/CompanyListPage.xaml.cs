@@ -29,7 +29,8 @@ namespace HR_Department.views.pages
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Manager.MainFrame.Navigate(new ShowCompanyPage());
+
+            //Manager.MainFrame.Navigate(new ShowCompanyPage());
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -37,12 +38,11 @@ namespace HR_Department.views.pages
            
 
             if (Visibility == Visibility.Visible)
-                HR_DepartmentEntities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-            DBlist.ItemsSource = HR_DepartmentEntities.GetContext().company.ToList();
+                HR_DepartmentEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            DBlist.ItemsSource = HR_DepartmentEntities1.GetContext().companyBD.ToList();
 
 
         }
-
       
 
         private void addCompany_MouseDown(object sender, MouseButtonEventArgs e)
@@ -62,6 +62,18 @@ namespace HR_Department.views.pages
         {
             conentMain.Visibility = Visibility.Visible;
             loading.Visibility = Visibility.Hidden;
+        }
+
+        private void DBlist_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int ID = (DBlist.SelectedItem as companyBD).id;
+           // Manager.MainFrame.Navigate(new ShowCompanyPage((sender as Button).DataContext as companyBD));
+            //Manager.MainFrame.Navigate(new ShowCompanyPage(ID));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new ShowCompanyPage((sender as Button).DataContext as companyBD));
         }
     }
 }

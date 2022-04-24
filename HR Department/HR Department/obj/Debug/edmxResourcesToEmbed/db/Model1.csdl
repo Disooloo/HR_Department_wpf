@@ -1,51 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="HR_DepartmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="company">
+  <EntityType Name="companyBD">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Nullable="false" Type="Int32" />
-    <Property Name="companyName" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-    <Property Name="CompanyManager" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
-    <Property Name="vacancy_isActive" Type="Boolean" />
-    <Property Name="id_vacancy" Type="String" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="responsible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="id_vacancy" Type="Int32" />
+    <NavigationProperty Name="vacancy" Relationship="Self.FK_vacancy_companyBD" FromRole="companyBD" ToRole="vacancy" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="full_team_count" Type="Int32" />
+    <Property Name="dop1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="teams">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="post" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="HR_DepartmentEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="company" EntityType="Self.company" />
-    <EntitySet Name="teams" EntityType="Self.teams" />
-    <EntitySet Name="sysdiagrams" EntityType="HR_DepartmentModel.sysdiagrams" />
-    <EntitySet Name="vacancy_db" EntityType="HR_DepartmentModel.vacancy_db" />
-  </EntityContainer>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="vacancy_db">
+  <EntityType Name="vacancy">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="Company_id" Type="Int32" />
-    <Property Name="v_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="v_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="v_count" Type="Int32" />
-    <Property Name="v_img" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="v_isActive" Type="Boolean" />
-    <Property Name="v_data" Type="DateTime" Precision="0" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="id_company" Type="Int32" />
+    <NavigationProperty Name="companyBD" Relationship="Self.FK_vacancy_companyBD" FromRole="vacancy" ToRole="companyBD" />
+    <Property Name="dop1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <Association Name="FK_vacancy_companyBD">
+    <End Role="companyBD" Type="Self.companyBD" Multiplicity="0..1" />
+    <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="companyBD">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vacancy">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HR_DepartmentEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="companyBD" EntityType="Self.companyBD" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="teams" EntityType="Self.teams" />
+    <EntitySet Name="vacancy" EntityType="Self.vacancy" />
+    <AssociationSet Name="FK_vacancy_companyBD" Association="Self.FK_vacancy_companyBD">
+      <End Role="companyBD" EntitySet="companyBD" />
+      <End Role="vacancy" EntitySet="vacancy" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

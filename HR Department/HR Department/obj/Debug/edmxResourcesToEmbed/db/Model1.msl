@@ -1,38 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище HR_DepartmentModelContainer" CdmEntityContainer="HR_DepartmentEntities">
-    <EntitySetMapping Name="teams">
-      <EntityTypeMapping TypeName="HR_DepartmentModel.teams">
-        <MappingFragment StoreEntitySet="teams">
+  <EntityContainerMapping StorageEntityContainer="Хранилище HR_DepartmentModelContainer" CdmEntityContainer="HR_DepartmentEntities1">
+    <EntitySetMapping Name="companyBD">
+      <EntityTypeMapping TypeName="HR_DepartmentModel.companyBD">
+        <MappingFragment StoreEntitySet="companyBD">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dop1" ColumnName="dop1" />
+          <ScalarProperty Name="full_team_count" ColumnName="full_team_count" />
+          <ScalarProperty Name="site" ColumnName="site" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="address" ColumnName="address" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="login" ColumnName="login" />
-          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="id_vacancy" ColumnName="id_vacancy" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="HR_DepartmentModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
           <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="vacancy_db">
-      <EntityTypeMapping TypeName="HR_DepartmentModel.vacancy_db">
-        <MappingFragment StoreEntitySet="vacancy_db">
-          <ScalarProperty Name="v_data" ColumnName="v_data" />
-          <ScalarProperty Name="v_isActive" ColumnName="v_isActive" />
-          <ScalarProperty Name="v_img" ColumnName="v_img" />
-          <ScalarProperty Name="v_count" ColumnName="v_count" />
-          <ScalarProperty Name="v_description" ColumnName="v_description" />
-          <ScalarProperty Name="v_name" ColumnName="v_name" />
-          <ScalarProperty Name="Company_id" ColumnName="Company_id" />
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="HR_DepartmentModel.teams">
+        <MappingFragment StoreEntitySet="teams">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="post" ColumnName="post" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vacancy">
+      <EntityTypeMapping TypeName="HR_DepartmentModel.vacancy">
+        <MappingFragment StoreEntitySet="vacancy">
+          <ScalarProperty Name="dop1" ColumnName="dop1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="id_company" ColumnName="id_company" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

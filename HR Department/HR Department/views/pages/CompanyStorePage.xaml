@@ -21,60 +21,208 @@
         </materialDesign:Card>
 
 
-        <Grid Grid.Column="0" VerticalAlignment="Center" Height="218">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Center" Margin="0,-37,0,38">Добавить новую компанию</TextBlock>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,20,0,0" HorizontalAlignment="Center">
-                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+        <Grid Grid.Column="0"  >
+      
+
+            <TextBlock Grid.ColumnSpan="2" Text="HR Depornament" Grid.Row="0" Grid.Column="0"
+                       HorizontalAlignment="Left" Margin="10 0"
+                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"/>
+
+                <Grid Margin="50 -50" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal" Grid.Row="0"   Width="234">
+                        <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Person" 
+                                         Foreground="{Binding ElementName=responsible, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                        </materialDesign:PackIcon>
+                        <TextBox 
+                            Name="responsible" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Ответственный" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=responsible}"
+                            >
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0 100 0 0"  Width="234">
+                        <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
                                          Kind="Company" 
                                          Foreground="{Binding ElementName=companyName, Path=BorderBrush}"
-                                         VerticalAlignment="Center" Margin="10,5,10,0">
+                                         VerticalAlignment="Center" >
 
-                </materialDesign:PackIcon>
-                <TextBox 
-                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                    materialDesign:HintAssist.Hint="Название компании" 
-                    Width="203" Height="62"
-                    Name="companyName"
-                    Text="{Binding Path=companyName}"
-                    >
-                </TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,20,0,0" HorizontalAlignment="Center">
-                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                        </materialDesign:PackIcon>
+                        <TextBox
+                            Name="companyName" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Наименование компании" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=companyName}"
+                            >
+                        </TextBox>
+                    </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 200 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Place" 
+                                         Foreground="{Binding ElementName=address, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="address" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Адрес" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=address}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 300 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Phone" 
+                                         Foreground="{Binding ElementName=phone, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="phone" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Телефон" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=phone}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 400 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Email" 
+                                         Foreground="{Binding ElementName=email, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="email" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="email" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=email}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+
+            </Grid>
+
+
+
+            <Grid Margin="50 -50" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" Grid.Row="0"   Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Web" 
+                                         Foreground="{Binding ElementName=site, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox 
+                            Name="site" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Сайт" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=responsible}"
+                            >
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0 100 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
                                          Kind="Person" 
-                                         Foreground="{Binding ElementName=CompanyManager, Path=BorderBrush}"
-                                         VerticalAlignment="Center" Margin="10,5,10,0">
+                                         Foreground="{Binding ElementName=full_team_count, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
 
-                </materialDesign:PackIcon>
-                <TextBox 
-                    Name="CompanyManager" 
-                    Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                    materialDesign:HintAssist.Hint="Ответственный" 
-                    Width="199" Height="66"
-                    Text="{Binding Path=CompanyManager}"
-                    >
-                </TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="152,20,0,-14" HorizontalAlignment="Left">
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="full_team_count" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Кол-во сотрудников" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=full_team_count}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 200 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="AccountReactivate" 
+                                         Foreground="{Binding ElementName=isActive, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="isActive" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Активность компании " 
+                            Width="199" Height="40"
+                            Text="{Binding Path=isActive}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 300 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Counter" 
+                                         Foreground="{Binding ElementName=id_vacancy, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="id_vacancy" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Кол-во вакансий" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=id_vacancy}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 400 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="ImageDescription" 
+                                         Foreground="{Binding ElementName=description, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="description" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Описание" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=description}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+               
+
+
+            </Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 90"  Width="300">
                 <Button Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Height="40" Width="80" Margin="50,0,0,0"
+                        Height="40" Width="80" 
+                        HorizontalAlignment="Left"
+                        Margin="40 0"
                         Name="back" Click="back_Click"
                         >Назад</Button>
-                <Button Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                <Button Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Height="40" Width="80" Margin="50,0,0,0" 
+                        Height="40" Width="120" 
+                        HorizontalAlignment="Right"
                         Name="companyStore" Click="companyStore_Click"
                         >Сохранить</Button>
-            </StackPanel>
+            </Grid>
+
         </Grid>
     </Grid>
 </Page>

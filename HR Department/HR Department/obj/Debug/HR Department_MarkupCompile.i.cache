@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\App.xaml
-6-175686111
+71061439368
+21144330430
+21-745192366
+23-1818910645
+MainWindow.xaml;views\layouts\CompanyListWindow.xaml;views\layouts\LoginWindow.xaml;views\pages\CompanyListPage.xaml;views\pages\CompanyStorePage.xaml;views\pages\ShowCompanyPage.xaml;views\pages\vacancyPageList.xaml;
 
-12-208938076
-231144247604
-MainWindow.xaml;views\layouts\CompanyListWindow.xaml;views\layouts\LoginWindow.xaml;views\pages\CompanyListPage.xaml;views\pages\CompanyStorePage.xaml;views\pages\ShowCompanyPage.xaml;
-
-False
+True
 

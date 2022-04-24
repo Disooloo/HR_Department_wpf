@@ -1,14 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Хранилище HR_DepartmentModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "HR_Department.dbo.company_db" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="company_db">
-          <Property Name="id" Type="int" />
-          <Property Name="companyName" Type="nvarchar" MaxLength="100" />
-          <Property Name="CompanyManager" Type="nvarchar" MaxLength="100" />
-          <Property Name="vacancy_id" Type="int" />
-          <Property Name="vacancy_isActive" Type="bit" />
-        </EntityType>-->
+  <EntityType Name="companyBD">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="responsible" Type="nvarchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="id_vacancy" Type="int" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="text" />
+    <Property Name="site" Type="nvarchar" MaxLength="50" />
+    <Property Name="full_team_count" Type="int" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="dop1" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -23,27 +31,43 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="name" Type="nvarchar" MaxLength="100" />
-    <Property Name="login" Type="nvarchar" MaxLength="20" />
-    <Property Name="password" Type="nvarchar" MaxLength="20" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="post" Type="nvarchar" MaxLength="20" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="vacancy_db">
+  <EntityType Name="vacancy">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="Company_id" Type="int" />
-    <Property Name="v_name" Type="nvarchar" MaxLength="100" />
-    <Property Name="v_description" Type="text" />
-    <Property Name="v_count" Type="int" />
-    <Property Name="v_img" Type="nvarchar" MaxLength="100" />
-    <Property Name="v_isActive" Type="bit" />
-    <Property Name="v_data" Type="date" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="text" />
+    <Property Name="id_company" Type="int" />
+    <Property Name="dop1" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_vacancy_companyBD">
+    <End Role="companyBD" Type="Self.companyBD" Multiplicity="0..1" />
+    <End Role="vacancy" Type="Self.vacancy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="companyBD">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vacancy">
+        <PropertyRef Name="id_company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище HR_DepartmentModelContainer">
+    <EntitySet Name="companyBD" EntityType="Self.companyBD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="teams" EntityType="Self.teams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="vacancy_db" EntityType="Self.vacancy_db" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vacancy" EntityType="Self.vacancy" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_vacancy_companyBD" Association="Self.FK_vacancy_companyBD">
+      <End Role="companyBD" EntitySet="companyBD" />
+      <End Role="vacancy" EntitySet="vacancy" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

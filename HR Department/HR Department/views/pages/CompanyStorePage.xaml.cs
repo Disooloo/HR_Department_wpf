@@ -22,10 +22,10 @@ namespace HR_Department.views.pages
     public partial class CompanyStorePage : Page
     {
 
-        private company _currentCompany = new company();
+        private companyBD _currentCompany = new companyBD();
 
         
-        public CompanyStorePage(company selectCompany)
+        public CompanyStorePage(companyBD selectCompany)
         {
             InitializeComponent();
 
@@ -42,7 +42,7 @@ namespace HR_Department.views.pages
 
             if (string.IsNullOrWhiteSpace(_currentCompany.companyName))
                 errors.AppendLine("companyName error");
-            if (string.IsNullOrWhiteSpace(_currentCompany.CompanyManager))
+            if (string.IsNullOrWhiteSpace(_currentCompany.responsible))
                 errors.AppendLine("CompanyManager error");
 
             if(errors.Length > 0)
@@ -51,12 +51,12 @@ namespace HR_Department.views.pages
                 return;
             }
             if(_currentCompany.id == 0)
-                HR_DepartmentEntities.GetContext().company.Add(_currentCompany);
+                HR_DepartmentEntities1.GetContext().companyBD.Add(_currentCompany);
             try
             {
-                HR_DepartmentEntities.GetContext().SaveChanges();
-                MessageBox.Show("Компания добавлена");
-                Manager.MainFrame.GoBack();
+                HR_DepartmentEntities1.GetContext().SaveChanges();
+                MessageBox.Show("Данные сохранены");
+                Manager.MainFrame.Navigate(new CompanyListPage());
             }
             catch (Exception ex)
             {
@@ -66,7 +66,7 @@ namespace HR_Department.views.pages
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.GoBack();
+            Manager.MainFrame.Navigate(new CompanyListPage());
         }
     }
 }

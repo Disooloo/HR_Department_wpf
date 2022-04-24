@@ -73,5 +73,21 @@ namespace HR_Department.views.layouts
                 //bnt_back.Visibility = Visibility.Hidden;
             }*/
         }
+
+        private void MenuItem_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+
+        private void vacancy_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new vacancyPageList());
+        }
+
+        private void company_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new CompanyListPage());
+        }
     }
 }

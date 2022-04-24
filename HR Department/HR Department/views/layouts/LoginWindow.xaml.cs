@@ -45,7 +45,7 @@ namespace HR_Department.views.layouts
 
         private void loginEnter(object sender, RoutedEventArgs e)
         {
-            CompanyListWindow  companyWindow = new CompanyListWindow();
+            CompanyListWindow companyWindow = new CompanyListWindow();
             companyWindow.Show();
             this.Close();
 
