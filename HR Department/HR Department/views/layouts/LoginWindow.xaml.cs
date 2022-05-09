@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using HR_Department.db;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -22,6 +23,9 @@ namespace HR_Department.views.layouts
         public LoginWindow()
         {
             InitializeComponent();
+
+            HR_DepartmentEntities1.GetContext().teams.ToList();
+            
         }
 
 
@@ -43,11 +47,51 @@ namespace HR_Department.views.layouts
             this.Close();
         }
 
+        private void clearLogin()
+        {
+            string login = "",
+                pass = "";
+        }
+
         private void loginEnter(object sender, RoutedEventArgs e)
         {
+
+
+            string login = loginBox.Text,
+              pass = passwordBox.Password,
+              admin = "Админ";
+
+            
+
             CompanyListWindow companyWindow = new CompanyListWindow();
-            companyWindow.Show();
-            this.Close();
+
+            teams authUser = null;
+
+            using (HR_DepartmentEntities1 db = new HR_DepartmentEntities1())
+            {
+                authUser = db.teams.Where(b => b.login == login && b.password == pass).FirstOrDefault();
+            }
+
+            if(authUser != null && authUser.post == admin)
+            {
+                AdminCreateWindow adminW = new AdminCreateWindow(null);
+                adminW.Show();
+                companyWindow.Show();
+                clearLogin();
+            }
+            if (authUser != null)
+            {
+                companyWindow.Show();
+                this.Close();
+                clearLogin();
+
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль");
+            }
+
+            
 
         }
     }

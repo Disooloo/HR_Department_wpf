@@ -48,9 +48,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="titleVacancy" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="text" />
           <Property Name="id_company" Type="int" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="responsible" Type="nvarchar" MaxLength="50" />
           <Property Name="dop1" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_vacancy_companyBD">
@@ -123,11 +125,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="id_company" Type="Int32" />
           <NavigationProperty Name="companyBD" Relationship="Self.FK_vacancy_companyBD" FromRole="vacancy" ToRole="companyBD" />
           <Property Name="dop1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="responsible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="titleVacancy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_vacancy_companyBD">
           <End Role="companyBD" Type="Self.companyBD" Multiplicity="0..1" />
@@ -201,9 +205,11 @@
           <EntitySetMapping Name="vacancy">
             <EntityTypeMapping TypeName="HR_DepartmentModel.vacancy">
               <MappingFragment StoreEntitySet="vacancy">
+                <ScalarProperty Name="titleVacancy" ColumnName="titleVacancy" />
+                <ScalarProperty Name="responsible" ColumnName="responsible" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="dop1" ColumnName="dop1" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="id_company" ColumnName="id_company" />
               </MappingFragment>

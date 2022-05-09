@@ -15,8 +15,10 @@
         <Grid Name="loading" Visibility="Visible" >
             <Image gif:AnimationBehavior.SourceUri="/Assets/img/loading.gif" Width="250" Height="250"/>
         </Grid>
-        
+
+    
         <Grid Name="conentMain" Visibility="Hidden">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="13*"/>
                 <RowDefinition Height="62*"/>
@@ -82,17 +84,22 @@
                             <Border 
                              Width="30"
                             HorizontalAlignment="Right">
-                                <materialDesign:PackIcon Foreground="#000" Kind="Search" Width="25" Height="25" Cursor="Hand" Margin="5,-5,0,0"></materialDesign:PackIcon>
+                                <materialDesign:PackIcon Foreground="#000" 
+                                                         Kind="Search" Width="25" 
+                                                         Height="25" Cursor="Hand" Margin="5,-5,0,0">
+                                </materialDesign:PackIcon>
                             </Border>
 
                             <TextBox
                                 VerticalAlignment="Center"
-                                Width="420"/>
+                                Width="350"
+                                Name="TBox_search"
+                                TextChanged="TextBox_TextChanged"/>
                         </Grid>
                     </Button>
                 </Border>
                 <!-- Название страницы -->
-                <Border
+              <Border
                     Background="#D5E0E5"
                     CornerRadius="15"
                     Margin="15,0"
@@ -124,113 +131,156 @@
                         </Grid>
                     </Button>
                 </Border>
+
+                <!-- Количество -->
+                <Border
+                    Background="#D5E0E5"
+                    CornerRadius="15"
+                    Margin="15,0"
+                    Padding="20"
+                    Width="150">
+                    <Button
+                        Background="Transparent"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center" Style="{DynamicResource ButtonStyle1}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <!--Icon (Add Url)-->
+                                <ColumnDefinition/>
+                                <!--Text-->
+                            </Grid.ColumnDefinitions>
+                          
+                           
+                            <DockPanel>
+                                <TextBlock
+                                Foreground="#673AB7"
+                                FontWeight="Bold"
+                                Grid.Column="1"
+                                Padding="6,0"
+                                Text="0"
+                                FontSize="20"
+                                Name="_Count_Base_title"
+                                VerticalAlignment="Center"/>
+
+                                <TextBlock Text="/ 10" 
+                                           Foreground="#41535A"
+                                           VerticalAlignment="Center"
+                                           FontWeight="Bold"
+                                           FontSize="20"/>
+                            </DockPanel>
+                        </Grid>
+                    </Button>
+                </Border>
+
             </StackPanel>
 
-                <Grid Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Border 
-                    Background="White"
-                    BorderBrush="#CBD7DC"
-                    BorderThickness="1"
-                    CornerRadius="15"
-                    Grid.Column="1"
-                    Padding="10">
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border 
+                                Background="White"
+                                BorderBrush="#CBD7DC"
+                                BorderThickness="1"
+                                CornerRadius="15"
+                                Grid.Column="1"
+                                Padding="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <!--Header-->
+                            <RowDefinition Height="21*"/>
+                            <RowDefinition Height="289*"/>
+                            <!--Rows-->
+                        </Grid.RowDefinitions>
+
+                        <!--Header-->
+                        <Border
+                                        Background="#D5E0E5"
+                                        CornerRadius="15"
+                                        Height="40">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <!--NameCompany-->
                                 <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <!--Header-->
-                                        <RowDefinition Height="21*"/>
-                                        <RowDefinition Height="289*"/>
-                                        <!--Rows-->
-                                    </Grid.RowDefinitions>
+                                    <TextBlock
+                                                    Foreground="#41535A"
+                                                    FontWeight="SemiBold"
+                                                    Padding="10,0"
+                                                    Text="Наименовании компании"
+                                                    VerticalAlignment="Center"/>
 
-                                    <!--Header-->
-                                    <Border
-                            Background="#D5E0E5"
-                            CornerRadius="15"
-                            Height="40">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition/>
-                                            </Grid.ColumnDefinitions>
+                                    <Rectangle
+                                                    Height="20"
+                                                    Stroke="#41535A"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Stretch"/>
+                                </Grid>
 
-                                            <!--NameCompany-->
-                                            <Grid>
-                                                <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="10,0"
-                                    Text="Наименовании компании"
-                                    VerticalAlignment="Center"/>
+                                <!--HeroCompany-->
+                                <Grid Grid.Column="1">
+                                    <TextBlock
+                                                    Foreground="#41535A"
+                                                    FontWeight="SemiBold"
+                                                    Padding="40,0"
+                                                    Text="Руководитель"
+                                                    VerticalAlignment="Center"/>
 
-                                                <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                                            </Grid>
+                                    <Rectangle
+                                                    Height="20"
+                                                    Stroke="#41535A"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Stretch"/>
+                                </Grid>
 
-                                            <!--HeroCompany-->
-                                            <Grid Grid.Column="1">
-                                                <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="40,0"
-                                    Text="Руководитель"
-                                    VerticalAlignment="Center"/>
+                                <!--Action-->
+                                <Grid Grid.Column="4">
+                                    <TextBlock
+                                                    Foreground="#41535A"
+                                                    FontWeight="SemiBold"
+                                                    Padding="10,0"
+                                                    Text="Действие"
+                                                    VerticalAlignment="Center"/>
 
-                                                <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                                            </Grid>
-
-                                            <!--Action-->
-                                            <Grid Grid.Column="4">
-                                                <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="10,0"
-                                    Text="Действие"
-                                    VerticalAlignment="Center"/>
-
-                                                <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                                            </Grid>
+                                    <Rectangle
+                                                    Height="20"
+                                                    Stroke="#41535A"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Stretch"/>
+                                </Grid>
 
 
-                                        </Grid>
-                                    </Border>
+                            </Grid>
+                        </Border>
 
-                                    <!--Rows-->
-                                    <ItemsControl
-                            Background="Transparent"
-                            BorderThickness="0"
-                            Grid.Row="1"
-                            HorizontalContentAlignment="Stretch" Grid.RowSpan="2">
-                                        <!--Guys, most of you complain that your custom control is not working.. most of the time it is due to not initializing this line above.-->
+                        <!--Rows-->
+                        <ItemsControl
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Grid.Row="1"
+                                        HorizontalContentAlignment="Stretch" Grid.RowSpan="2">
+                            <!--Guys, most of you complain that your custom control is not working.. most of the time it is due to not initializing this line above.-->
 
-                                    </ItemsControl>
+                        </ItemsControl>
 
-                                <DataGrid Name="DBlist" MouseDoubleClick="DBlist_MouseDoubleClick" 
+                        <DataGrid Name="DBlist" 
                                           AutoGenerateColumns="False" IsReadOnly="True" 
-                                           ScrollViewer.CanContentScroll="True" 
-                                              ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                              ScrollViewer.HorizontalScrollBarVisibility="Auto">
-                                    <DataGrid.Columns>
+                                          ScrollViewer.CanContentScroll="True" 
+                                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Auto">
 
-                                        <DataGridTextColumn Header="#" Width="*" Binding="{Binding Path=id}"/>
-                                        <DataGridTextColumn Header="Ответственный" Width="*" Binding="{Binding Path=responsible}"/>
-                                        <DataGridTextColumn Header="Компания" Width="*" Binding="{Binding Path=companyName}"/>
-                                        <DataGridCheckBoxColumn Header="Активность"  Binding="{Binding Path=isActive}"/>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="#" Width="*" Binding="{Binding Path=id}"/>
+                                <DataGridTextColumn Header="Ответственный" Width="*" Binding="{Binding Path=responsible}"/>
+                                <DataGridTextColumn Header="Компания" Width="*" Binding="{Binding Path=companyName}"/>
+                                <DataGridCheckBoxColumn Header="Активность"  Binding="{Binding Path=isActive}"/>
                                 <DataGridTemplateColumn>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -238,18 +288,11 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                                  
-
-                                </Grid>
-                            </Border>
-                        </Grid>
-
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Grid>
         </Grid>
-        
-      
     </Grid>
-    
 </Page>

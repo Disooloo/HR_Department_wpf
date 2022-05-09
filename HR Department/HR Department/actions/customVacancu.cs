@@ -12,7 +12,7 @@ namespace HR_Department.actions
         public customVacancu(vacancy vac)
         {
             id = vac.id;
-            title = vac.title;
+            titleVacancy = vac.titleVacancy;
         }
     }
 }

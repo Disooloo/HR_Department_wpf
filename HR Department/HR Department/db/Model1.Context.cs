@@ -16,7 +16,6 @@ namespace HR_Department.db
     public partial class HR_DepartmentEntities1 : DbContext
     {
 
-
         private static HR_DepartmentEntities1 _context;
 
         public static HR_DepartmentEntities1 GetContext()
@@ -25,7 +24,6 @@ namespace HR_Department.db
                 _context = new HR_DepartmentEntities1();
             return _context;
         }
-
         public HR_DepartmentEntities1()
             : base("name=HR_DepartmentEntities1")
         {

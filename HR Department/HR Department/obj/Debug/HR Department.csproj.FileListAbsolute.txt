@@ -68,3 +68,10 @@ C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\b
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\vacancyPageList.g.cs
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\vacancyPageList.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\vacancyShowPage.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\vacancyShowPage.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\vacancyStorePage.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\pages\vacancyStorePage.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.SuggestedBindingRedirects.cache
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\AdminCreateWindow.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\AdminCreateWindow.baml

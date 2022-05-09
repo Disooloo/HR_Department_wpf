@@ -1,5 +1,6 @@
 ﻿using HR_Department.views.pages;
 using System;
+using HR_Department.db;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace HR_Department.views.layouts
         public CompanyListWindow()
         {
             InitializeComponent();
+
 
             MainFrame.Navigate(new CompanyListPage());
             Manager.MainFrame = MainFrame;

@@ -35,12 +35,12 @@
             <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,20,0,0" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
                                          Kind="Account" 
-                                         Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}"
+                                         Foreground="{Binding ElementName=loginBox, Path=BorderBrush}"
                                          VerticalAlignment="Center" Margin="10,5,10,0">
                     
                 </materialDesign:PackIcon>
                 <TextBox 
-                    x:Name="NameTextBox" 
+                    Name="loginBox"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                     materialDesign:HintAssist.Hint="Логин" 
                     Width="140">
@@ -49,11 +49,11 @@
             <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,20,0,0" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
                                          Kind="Key" 
-                                         Foreground="{Binding ElementName=PasswordBox, Path=BorderBrush}"
+                                         Foreground="{Binding ElementName=passwordBox, Path=BorderBrush}"
                                          VerticalAlignment="Center" Margin="10,5,10,0">
 
                 </materialDesign:PackIcon>
-                <PasswordBox x:Name="PasswordBox"
+                <PasswordBox Name="passwordBox"
                              materialDesign:HintAssist.Hint="Пароль"
                              materialDesign:HintAssist.Foreground="Green"
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"

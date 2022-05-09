@@ -43,9 +43,11 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="titleVacancy" Type="nvarchar" MaxLength="50" />
     <Property Name="description" Type="text" />
     <Property Name="id_company" Type="int" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="responsible" Type="nvarchar" MaxLength="50" />
     <Property Name="dop1" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_vacancy_companyBD">

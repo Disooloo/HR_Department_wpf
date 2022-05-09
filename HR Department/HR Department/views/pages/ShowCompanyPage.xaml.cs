@@ -37,7 +37,7 @@ namespace HR_Department.views.pages
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.GoBack();
         }
 
         private void companyStore_Click(object sender, RoutedEventArgs e)

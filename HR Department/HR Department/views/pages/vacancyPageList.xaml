@@ -5,26 +5,185 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HR_Department.views.pages"
       mc:Ignorable="d" 
-      
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Loaded="Page_Loaded"
+      IsVisibleChanged="Page_IsVisibleChanged"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif"
  
-      
       d:DesignHeight="450" d:DesignWidth="800"
       Title="vacancyPageList">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="31*"/>
-            <RowDefinition Height="119*"/>
-        </Grid.RowDefinitions>
 
-        <Grid Name="nav" Background="#EEEEEE">
-            
+        <Grid Name="loading" Visibility="Visible" >
+            <Image gif:AnimationBehavior.SourceUri="/Assets/img/loading.gif" Width="250" Height="250"/>
         </Grid>
-        
-        <Grid Name="conent" Grid.Row="1" >
-            <Border 
+
+        <Grid Name="conentMain" Visibility="Hidden">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="31*"/>
+                <RowDefinition Height="119*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Name="nav" Background="#EEEEEE">
+                <StackPanel 
+                Margin="0,5"
+                Orientation="Horizontal" >
+
+                    <!-- Добавление компании -->
+                    <Border
+                    Background="#D5E0E5"
+                    CornerRadius="15"
+                    Margin="15,0"
+                    Padding="20">
+                        <Button
+                        Background="Transparent"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center" Style="{DynamicResource ButtonStyle1}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <!--Icon (Add Url)-->
+                                    <ColumnDefinition/>
+                                    <!--Text-->
+                                </Grid.ColumnDefinitions>
+                                <Border 
+                                    Width="30">
+                                    <materialDesign:PackIcon Kind="PlusCircle" Width="25" Height="25" Cursor="Hand" Margin="5,5,0,0"></materialDesign:PackIcon>
+                                </Border>
+
+                                <TextBlock
+                                Foreground="#41535A"
+                                FontWeight="SemiBold"
+                                Grid.Column="1"
+                                Padding="6,0"
+                                Text="Добавить вакансию"
+                                Cursor="Hand"
+                                Name="addCompany"
+                                MouseDown="addCompany_MouseDown"
+                                VerticalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <!-- Поисковик -->
+                    <Border
+                    Background="#D5E0E5"
+                    CornerRadius="15"
+                    Margin="15,0"
+                    Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}"
+                    Padding="20">
+                        <Button
+                        Background="Transparent"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center" Style="{DynamicResource ButtonStyle1}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300"/>
+                                    <!--Icon (Add Url)-->
+                                    <ColumnDefinition/>
+                                    <!--Text-->
+                                </Grid.ColumnDefinitions>
+                                <Border 
+                             Width="30"
+                            HorizontalAlignment="Right">
+                                    <materialDesign:PackIcon Foreground="#000" Kind="Search" Width="25" Height="25" Cursor="Hand" Margin="5,-5,0,0"></materialDesign:PackIcon>
+                                </Border>
+
+                                <TextBox
+                                VerticalAlignment="Center"
+                                Width="350"
+                                Name="TBox_search"
+                               TextChanged="TextBox_TextChanged" />
+                                
+                            </Grid>
+                        </Button>
+                    </Border>
+                    <!-- Название страницы -->
+                    <Border
+                    Background="#D5E0E5"
+                    CornerRadius="15"
+                    Margin="15,0"
+                    Padding="20">
+                        <Button
+                        Background="Transparent"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center" Style="{DynamicResource ButtonStyle1}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <!--Icon (Add Url)-->
+                                    <ColumnDefinition/>
+                                    <!--Text-->
+                                </Grid.ColumnDefinitions>
+                                <Border 
+                                    Width="30">
+                                    <materialDesign:PackIcon Kind="Post" Width="25" Height="25" Cursor="Hand" Margin="5,5,0,0"></materialDesign:PackIcon>
+                                </Border>
+
+                                <TextBlock
+                                Foreground="#41535A"
+                                FontWeight="SemiBold"
+                                Grid.Column="1"
+                                Padding="6,0"
+                                Text="Вакансии"
+                                Name="title"
+                                VerticalAlignment="Center"/>
+                            </Grid>
+                        </Button>
+                    </Border>
+
+                    <!-- Количество -->
+                    <Border
+                    Background="#D5E0E5"
+                    CornerRadius="15"
+                    Margin="15,0"
+                    Padding="20"
+                    Width="220">
+                        <Button
+                        Background="Transparent"
+                        BorderThickness="0"
+                        VerticalContentAlignment="Center" Style="{DynamicResource ButtonStyle1}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <!--Icon (Add Url)-->
+                                    <ColumnDefinition/>
+                                    <!--Text-->
+                                </Grid.ColumnDefinitions>
+
+                                <DockPanel>
+                                    <TextBlock
+                                Foreground="#41535A"
+                                Grid.Column="1"
+                                FontWeight="Bold"
+                                FontSize="20"
+                                Padding="6,0"
+                                Text="Вакансий |"
+                                VerticalAlignment="Center"/>
+                                    <TextBlock
+                                Foreground="#673AB7"
+                                FontWeight="Bold"
+                                Grid.Column="1"
+                                Padding="6,0"
+                                Text="0"
+                                FontSize="20"
+                                Name="_Count_Base_title"
+                                VerticalAlignment="Center"/>
+
+                                </DockPanel>
+                            
+                                   
+                            </Grid>
+                        </Button>
+                    </Border>
+                    
+                </StackPanel>
+            </Grid>
+
+            <Grid Name="conent" Grid.Row="1" >
+                <Border 
                 
                     Background="White"
                     BorderBrush="#CBD7DC"
@@ -32,102 +191,70 @@
                     CornerRadius="15"
                     Grid.Column="1"
                     Padding="10">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <!--Header-->
-                        <RowDefinition Height="21*"/>
-                        <RowDefinition Height="289*"/>
-                        <!--Rows-->
-                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <!--Header-->
+                            <RowDefinition Height="21*"/>
+                            <RowDefinition Height="289*"/>
+                            <!--Rows-->
+                        </Grid.RowDefinitions>
 
-                    <!--Header-->
-                    <Border
+                        <!--Header-->
+                        <Border
                             Background="#D5E0E5"
                             CornerRadius="15"
                             Height="40">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-
-                            <!--NameCompany-->
                             <Grid>
-                                <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="10,0"
-                                    Text="Наименовании компании"
-                                    VerticalAlignment="Center"/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
 
-                                <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
+
                             </Grid>
-
-                            <!--HeroCompany-->
-                            <Grid Grid.Column="1">
-                                <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="40,0"
-                                    Text="Руководитель"
-                                    VerticalAlignment="Center"/>
-
-                                <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                            </Grid>
-
-                            <!--Action-->
-                            <Grid Grid.Column="4">
-                                <TextBlock
-                                    Foreground="#41535A"
-                                    FontWeight="SemiBold"
-                                    Padding="10,0"
-                                    Text="Действие"
-                                    VerticalAlignment="Center"/>
-
-                                <Rectangle
-                                    Height="20"
-                                    Stroke="#41535A"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Stretch"/>
-                            </Grid>
+                        </Border>
 
 
-                        </Grid>
-                    </Border>
-
-
-                    <!--Rows-->
-                    <ItemsControl
+                        <!--Rows-->
+                        <ItemsControl
                             Background="Transparent"
                             BorderThickness="0"
                             Grid.Row="1"
                             HorizontalContentAlignment="Stretch" Grid.RowSpan="2">
-                        <!--Guys, most of you complain that your custom control is not working.. most of the time it is due to not initializing this line above.-->
+                            <!--Guys, most of you complain that your custom control is not working.. most of the time it is due to not initializing this line above.-->
 
-                    </ItemsControl>
+                        </ItemsControl>
 
 
-                    <DataGrid Name="DBlist" MouseDoubleClick="DBlist_MouseDoubleClick" AutoGenerateColumns="False" IsReadOnly="True" >
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Width="*" Binding="{Binding Path=id}"/>
-                            <DataGridTextColumn Header="Название вакансии" Width="*" Binding="{Binding Path=responsible}"/>
-                            <DataGridTextColumn Header="Компания" Width="*" Binding="{Binding Path=companyName}"/>
-                            <DataGridCheckBoxColumn Header="Активность"  Binding="{Binding Path=isActive}"/>
-                        </DataGrid.Columns>
-                    </DataGrid>
+                        
+                        <DataGrid Name="DBlist"
+                                  AutoGenerateColumns="False" IsReadOnly="True" 
+                                  ScrollViewer.CanContentScroll="True" 
+                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                            
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="#" Width="*" Binding="{Binding Path=id}"/>
+                                <DataGridTextColumn Header="Название вакансии" Width="*" Binding="{Binding Path=titleVacancy}"/>
+                                <DataGridTextColumn Header="Ответственный" Width="*" Binding="{Binding Path=responsible}"/>
+                                <DataGridTextColumn Header="Компания" Width="*" Binding="{Binding Path=id_company}"/>
+                                <DataGridCheckBoxColumn Header="Активность"  Binding="{Binding Path=isActive}"/>
+                                <DataGridTemplateColumn Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="Подробнее"  Click="Button_Click" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
-                </Grid>
-            </Border>
+                    </Grid>
+                </Border>
+            </Grid>
         </Grid>
+
     </Grid>
 </Page>

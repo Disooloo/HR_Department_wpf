@@ -1,6 +1,7 @@
-﻿using HR_Department.db;
+﻿using HR_Department.db; 
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace HR_Department.views.pages
         public CompanyListPage()
         {
             InitializeComponent();
+            Update();
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
@@ -40,6 +42,8 @@ namespace HR_Department.views.pages
             if (Visibility == Visibility.Visible)
                 HR_DepartmentEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
             DBlist.ItemsSource = HR_DepartmentEntities1.GetContext().companyBD.ToList();
+           
+           
 
 
         }
@@ -54,8 +58,10 @@ namespace HR_Department.views.pages
         {
             DispatcherTimer dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 3);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
+            Count_Base();
+            Update();
 
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -71,9 +77,34 @@ namespace HR_Department.views.pages
             //Manager.MainFrame.Navigate(new ShowCompanyPage(ID));
         }
 
+        private void Count_Base()
+        {
+            //var purchCount = (from purchase in myBlaContext.purchases select purchase).Count();
+            var query = HR_DepartmentEntities1.GetContext().companyBD.Count();
+
+            _Count_Base_title.Text = query.ToString();
+
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new ShowCompanyPage((sender as Button).DataContext as companyBD));
+        }
+
+        private void Update()
+        {
+            var currentCompany = HR_DepartmentEntities1.GetContext().companyBD.ToList();
+
+            currentCompany = currentCompany.Where(p =>
+                p.companyName.ToLower().Contains(TBox_search.Text.ToLower())
+                || p.responsible.ToLower().Contains(TBox_search.Text.ToLower())).ToList();
+
+            DBlist.ItemsSource = currentCompany.ToList();
+        }
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Update();
         }
     }
 }

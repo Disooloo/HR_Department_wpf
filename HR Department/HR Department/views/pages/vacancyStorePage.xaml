@@ -1,0 +1,164 @@
+﻿<Page x:Class="HR_Department.views.pages.vacancyStorePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HR_Department.views.pages"
+      mc:Ignorable="d" 
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="vacancyStorePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="237*"></ColumnDefinition>
+            <ColumnDefinition Width="163*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card Grid.Column="1">
+            <Image Source="/Assets/img/chtmmgm.png"  />
+        </materialDesign:Card>
+
+
+        <Grid Grid.Column="0">
+            <TextBlock Grid.ColumnSpan="2" Text="Отдел кадров: Вакансии" Grid.Row="0" Grid.Column="0"
+                       HorizontalAlignment="Left" Margin="10 0"
+                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"/>
+
+            <Grid Margin="50 -50" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 100 0 0"    Width="234" >
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Ornament" 
+                                         Foreground="{Binding ElementName=title, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox 
+                            Name="title" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Название вакансии" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=title}"
+                            >
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0 200 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Phone" 
+                                         Foreground="{Binding ElementName=phone, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="phone" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Номер телефона" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=dop1}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 300 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Company" 
+                                         Foreground="{Binding ElementName=id_company, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="id_company" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Компания" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=id_company}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                
+
+            </Grid>
+
+            <Grid Margin="50 -50" HorizontalAlignment="Right" VerticalAlignment="Top">
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 100 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Phone" 
+                                         Foreground="{Binding ElementName=isActive, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="isActive" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Активность" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=isActive}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 200 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="Person" 
+                                         Foreground="{Binding ElementName=responsible, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="responsible" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Ответственный" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=responsible}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 300 0 0"  Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
+                                         Kind="ImageDescription" 
+                                         Foreground="{Binding ElementName=description, Path=BorderBrush}"
+                                         VerticalAlignment="Center" >
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                            Name="description" 
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="Описание" 
+                            Width="199" Height="40"
+                            Text="{Binding Path=description}"
+                            >
+                    </TextBox>
+                </StackPanel>
+
+
+
+
+            </Grid>
+            
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 90"  Width="300">
+                <Button Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}"
+                        materialDesign:ButtonAssist.CornerRadius="20"
+                        Height="40" Width="80" 
+                        HorizontalAlignment="Left"
+                        Margin="40 0"
+                        Name="back" Click="back_Click"
+                        >Назад</Button>
+                <Button Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}"
+                        materialDesign:ButtonAssist.CornerRadius="20"
+                        Height="40" Width="120" 
+                        HorizontalAlignment="Right"
+                        Name="vcancyStore" Click="vacancyStore_Click"
+                        >Сохранить</Button>
+            </Grid>
+            
+
+            
+
+        </Grid>
+    </Grid>
+</Page>
+

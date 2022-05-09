@@ -162,6 +162,7 @@
 
                     </Menu>
 
+                   
                     <StackPanel
                     Grid.Column="2"
                     Orientation="Horizontal">
@@ -186,6 +187,15 @@
 
             </Grid>
         </Border>
+    
+        
+        
         <Frame Background="#FFEEEEEE" Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+    
+        
+        
+        
+        
     </Grid>
+    
 </Window>

@@ -66,7 +66,7 @@ namespace HR_Department.views.pages
 
         private void back_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new CompanyListPage());
+            Manager.MainFrame.GoBack();
         }
     }
 }

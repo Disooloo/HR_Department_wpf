@@ -45,9 +45,11 @@
     <EntitySetMapping Name="vacancy">
       <EntityTypeMapping TypeName="HR_DepartmentModel.vacancy">
         <MappingFragment StoreEntitySet="vacancy">
+          <ScalarProperty Name="titleVacancy" ColumnName="titleVacancy" />
+          <ScalarProperty Name="responsible" ColumnName="responsible" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
           <ScalarProperty Name="dop1" ColumnName="dop1" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="title" ColumnName="title" />
           <ScalarProperty Name="description" ColumnName="description" />
           <ScalarProperty Name="id_company" ColumnName="id_company" />
         </MappingFragment>

@@ -15,10 +15,12 @@ namespace HR_Department.db
     public partial class vacancy
     {
         public int id { get; set; }
-        public string title { get; set; }
         public string description { get; set; }
         public Nullable<int> id_company { get; set; }
         public string dop1 { get; set; }
+        public Nullable<bool> isActive { get; set; }
+        public string responsible { get; set; }
+        public string titleVacancy { get; set; }
     
         public virtual companyBD companyBD { get; set; }
     }
