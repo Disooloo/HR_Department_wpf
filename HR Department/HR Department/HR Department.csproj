@@ -113,6 +113,9 @@
     <Compile Include="views\layouts\CompanyListWindow.xaml.cs">
       <DependentUpon>CompanyListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="views\layouts\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="views\layouts\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="views\layouts\HelpWindow.xaml" />
     <Page Include="views\layouts\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -229,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\img\logo.png" />
+    <Resource Include="Assets\img\meeting-1453895_1280.png" />
     <Content Include="db\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

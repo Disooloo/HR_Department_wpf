@@ -37,7 +37,6 @@ namespace HR_Department.views.layouts
             }
             catch (Exception)
             {
-
                 //throw;
             }
         }
@@ -47,11 +46,6 @@ namespace HR_Department.views.layouts
             this.Close();
         }
 
-        private void clearLogin()
-        {
-            string login = "",
-                pass = "";
-        }
 
         private void loginEnter(object sender, RoutedEventArgs e)
         {
@@ -61,7 +55,7 @@ namespace HR_Department.views.layouts
               pass = passwordBox.Password,
               admin = "Админ";
 
-            
+
 
             CompanyListWindow companyWindow = new CompanyListWindow();
 
@@ -72,20 +66,24 @@ namespace HR_Department.views.layouts
                 authUser = db.teams.Where(b => b.login == login && b.password == pass).FirstOrDefault();
             }
 
-            if(authUser != null && authUser.post == admin)
+            if( authUser.post == admin)
             {
                 AdminCreateWindow adminW = new AdminCreateWindow(null);
                 adminW.Show();
                 companyWindow.Show();
-                clearLogin();
+                this.Close();
+
             }
-            if (authUser != null)
+            else if (authUser.post != admin)
             {
                 companyWindow.Show();
                 this.Close();
-                clearLogin();
-
             }
+            else if(authUser == null)
+            {
+                MessageBox.Show("Поле не может быть пустым");
+            }
+
             else
             {
                 MessageBox.Show("Неверный логин или пароль");

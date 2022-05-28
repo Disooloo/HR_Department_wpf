@@ -75,3 +75,5 @@ C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\o
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\HR Department.csproj.SuggestedBindingRedirects.cache
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\AdminCreateWindow.g.cs
 C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\AdminCreateWindow.baml
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\HelpWindow.g.cs
+C:\Users\kroli\Documents\dev\git\HR_Department_wpf\HR Department\HR Department\obj\Debug\views\layouts\HelpWindow.baml

@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:HR_Department.views.layouts"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="LoginWindow" Height="550" Width="800" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="dragme">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="LoginWindow" Height="550" Width="800" AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="dragme"
+        Icon="/Assets/img/logo.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -17,38 +21,42 @@
         <materialDesign:Card Grid.Column="1"
                              HorizontalAlignment="Stretch"
                              VerticalAlignment="Stretch">
-            <Image Source="/assets/img/hr.jpg"  />
+            <Image Source="/assets/img/hr.jpg" />
         </materialDesign:Card>
 
-        <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand" MouseDown="CloseLogin" Margin="5,5,0,0"></materialDesign:PackIcon>
-        
+        <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand" MouseDown="CloseLogin"
+                                 Margin="5,5,0,0">
+        </materialDesign:PackIcon>
+
         <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center">
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0"
                        Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Center">Отдел кадров</TextBlock>
+                       HorizontalAlignment="Center">
+                Отдел кадров
+            </TextBlock>
             <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,20,0,0" HorizontalAlignment="Center">
-                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Account" 
+                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                         Kind="Account"
                                          Foreground="{Binding ElementName=loginBox, Path=BorderBrush}"
                                          VerticalAlignment="Center" Margin="10,5,10,0">
-                    
+
                 </materialDesign:PackIcon>
-                <TextBox 
+                <TextBox
                     Name="loginBox"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                    materialDesign:HintAssist.Hint="Логин" 
+                    materialDesign:HintAssist.Hint="Логин"
                     Width="140">
                 </TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,20,0,0" HorizontalAlignment="Center">
-                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Key" 
+                <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                         Kind="Key"
                                          Foreground="{Binding ElementName=passwordBox, Path=BorderBrush}"
                                          VerticalAlignment="Center" Margin="10,5,10,0">
 
@@ -59,14 +67,17 @@
                              materialDesign:TextFieldAssist.UnderlineBrush="Green"
                              Width="140"
                              IsEnabled="True"
-                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"></PasswordBox>
+                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+                </PasswordBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="90,20,0,0" HorizontalAlignment="Center">
                 <CheckBox Content="Запомнить меня" HorizontalAlignment="Stretch" Cursor="Hand"></CheckBox>
                 <Button Style="{StaticResource MaterialDesignFlatDarkBgButton}"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Height="40" Width="80" Margin="50,0,0,0" 
-                        Click="loginEnter">Войти</Button>
+                        Height="40" Width="80" Margin="50,0,0,0"
+                        Click="loginEnter">
+                    Войти
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

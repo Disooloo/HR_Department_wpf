@@ -37,9 +37,9 @@ namespace HR_Department.views.layouts
 
         private void Minimase_Click(object sender, RoutedEventArgs e)
         {
-            if(this.WindowState == WindowState.Normal)
+            if (this.WindowState == WindowState.Normal)
             {
-                this.WindowState = WindowState.Minimized; 
+                this.WindowState = WindowState.Minimized;
             }
         }
 
@@ -51,34 +51,33 @@ namespace HR_Department.views.layouts
             }
             catch (Exception)
             {
-
                 //throw;
             }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult res = MessageBox.Show("Вы точно хотите выйти ?", "Выход", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult res = MessageBox.Show("Вы точно хотите выйти ?", "Выход", MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
             if (res == MessageBoxResult.No)
                 e.Cancel = true;
         }
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
-           /* if (MainFrame.CanGoBack)
-            {
-                
-                //bnt_back.Visibility = Visibility.Visible; // на будующее, если нужны будут хлебные крошки
-            }
-            else
-            {
-                //bnt_back.Visibility = Visibility.Hidden;
-            }*/
+            /* if (MainFrame.CanGoBack)
+             {
+                 
+                 //bnt_back.Visibility = Visibility.Visible; // на будующее, если нужны будут хлебные крошки
+             }
+             else
+             {
+                 //bnt_back.Visibility = Visibility.Hidden;
+             }*/
         }
 
         private void MenuItem_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
         }
 
 
@@ -90,6 +89,17 @@ namespace HR_Department.views.layouts
         private void company_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new CompanyListPage());
+        }
+
+        private void UIElement_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void UIElement_OnMouseDownHelp(object sender, MouseButtonEventArgs e)
+        {
+            HelpWindow helpWindow = new HelpWindow();
+            helpWindow.Show();
         }
     }
 }

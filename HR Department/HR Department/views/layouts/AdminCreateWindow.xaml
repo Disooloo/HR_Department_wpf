@@ -5,142 +5,172 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HR_Department.views.layouts"
         mc:Ignorable="d"
-         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Добавление пользователя"  Height="650" Width="900" 
+        Icon="/Assets/img/logo.png"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Добавление пользователя" Height="685" Width="1030"
         AllowsTransparency="True" WindowStyle="None"
         WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
-    <Grid>
+    <Grid MouseDown="Grid_MouseDown_1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <materialDesign:Card Grid.Column="1"
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Stretch">
-            <Image Source="/assets/img/hr.jpg"  />
-        </materialDesign:Card>
+        <Grid Grid.Column="1">
 
-        <materialDesign:PackIcon Kind="close" Width="25" Height="25" 
-                                 Cursor="Hand" MouseDown="CloseLogin" 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="148*" />
+                <RowDefinition Height="177*" />
+            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Image Source="/Assets/img/meeting-1453895_1280.png" />
+            </Grid>
+            <materialDesign:Card Grid.Row="1"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Top">
+
+                <Grid>
+                    <TextBlock Text="Отдел кадров: " FontSize="30" Grid.Row="0" Grid.Column="0"
+                               HorizontalAlignment="Left" Margin="10 0"
+                               Style="{StaticResource MaterialDesignHeadline4TextBlock}" />
+
+                    <DataGrid Name="DBlist"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              ScrollViewer.CanContentScroll="True"
+                              ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              ScrollViewer.HorizontalScrollBarVisibility="Auto">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="#" Width="*" Binding="{Binding Path=id}" />
+                            <DataGridTextColumn Header="Имя" Width="*" Binding="{Binding Path=lastName}" />
+                            <DataGridTextColumn Header="Фамилия" Width="*" Binding="{Binding Path=firstName}" />
+                            <DataGridTextColumn Header="Должность" Width="*" Binding="{Binding Path=post}" />
+                            <DataGridTextColumn Header="Логин" Binding="{Binding Path=login}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </materialDesign:Card>
+
+
+        </Grid>
+
+
+        <materialDesign:PackIcon Kind="close" Width="25" Height="25"
+                                 Cursor="Hand" MouseDown="CloseLogin"
                                  Margin="5,5,0,0">
-            
+
         </materialDesign:PackIcon>
 
 
-        <Grid Grid.Column="0" VerticalAlignment="Center">
-            <TextBlock  Text="Отдел кадров: "  FontSize="30" Grid.Row="0" Grid.Column="0"
+        <Grid Grid.Column="0" VerticalAlignment="Center" Height="280">
+            <TextBlock Text="Отдел кадров: " FontSize="30" Grid.Row="0" Grid.Column="0"
                        HorizontalAlignment="Left" Margin="10 0"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"/>
-            <TextBlock  Text="Пользователи" Name="logotitle" FontSize="30" Grid.Row="0" Grid.Column="0"
+                       Style="{StaticResource MaterialDesignHeadline4TextBlock}" />
+            <TextBlock Text="Пользователи" Name="logotitle" FontSize="30" Grid.Row="0" Grid.Column="0"
                        HorizontalAlignment="Right" Margin="20 0" FontWeight="Bold" Foreground="#673AB7"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"/>
+                       Style="{StaticResource MaterialDesignHeadline4TextBlock}" />
 
 
             <Grid Margin="50 -80" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <StackPanel Orientation="Horizontal" Grid.Row="0"   Width="234">
-                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Person" 
-                                         Foreground="{Binding ElementName=lastName, Path=BorderBrush}"
-                                         VerticalAlignment="Center" >
-
-                    </materialDesign:PackIcon>
-                    <TextBox 
-                            Name="lastName" 
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            materialDesign:HintAssist.Hint="Имя" 
-                            Width="199" Height="40"
-                            Text="{Binding Path=lastName}"
-                            >
-                    </TextBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0 100 0 0"  Width="234">
-                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Person" 
-                                         Foreground="{Binding ElementName=firstName, Path=BorderBrush}"
-                                         VerticalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                             Kind="Person"
+                                             Foreground="{Binding ElementName=lastName, Path=BorderBrush}"
+                                             VerticalAlignment="Center">
 
                     </materialDesign:PackIcon>
                     <TextBox
-                            Name="firstName" 
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            materialDesign:HintAssist.Hint="Фамилия" 
-                            Width="199" Height="40"
-                            Text="{Binding Path=firstName}"
-                            >
+                        Name="lastName"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Имя"
+                        Width="199" Height="40"
+                        Text="{Binding Path=lastName}">
                     </TextBox>
                 </StackPanel>
-
-                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 200 0 0"  Width="234">
-                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Post" 
-                                         Foreground="{Binding ElementName=post, Path=BorderBrush}"
-                                         VerticalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Margin="0 100 0 0" Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                             Kind="Person"
+                                             Foreground="{Binding ElementName=firstName, Path=BorderBrush}"
+                                             VerticalAlignment="Center">
 
                     </materialDesign:PackIcon>
                     <TextBox
-                            Name="post" 
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            materialDesign:HintAssist.Hint="Роль"
-                            Width="199" Height="40"
-                            Text="{Binding Path=post}"
-                            >
+                        Name="firstName"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Фамилия"
+                        Width="199" Height="40"
+                        Text="{Binding Path=firstName}">
                     </TextBox>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 300 0 0"  Width="234">
-                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Login" 
-                                         Foreground="{Binding ElementName=login, Path=BorderBrush}"
-                                         VerticalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 200 0 0" Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                             Kind="Post"
+                                             Foreground="{Binding ElementName=post, Path=BorderBrush}"
+                                             VerticalAlignment="Center">
 
                     </materialDesign:PackIcon>
                     <TextBox
-                            Name="login" 
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            materialDesign:HintAssist.Hint="Логин" 
-                            Width="199" Height="40"
-                            Text="{Binding Path=login}"
-                            >
+                        Name="post"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Роль"
+                        Width="199" Height="40"
+                        Text="{Binding Path=post}">
                     </TextBox>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 400 0 0"  Width="234">
-                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" 
-                                         Kind="Password" 
-                                         Foreground="{Binding ElementName=password, Path=BorderBrush}"
-                                         VerticalAlignment="Center" >
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 300 0 0" Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                             Kind="Login"
+                                             Foreground="{Binding ElementName=login, Path=BorderBrush}"
+                                             VerticalAlignment="Center">
 
                     </materialDesign:PackIcon>
                     <TextBox
-                            Name="password" 
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            materialDesign:HintAssist.Hint="Пароль" 
-                            Width="199" Height="40"
-                            Text="{Binding Path=password}"
-                            >
+                        Name="login"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Логин"
+                        Width="199" Height="40"
+                        Text="{Binding Path=login}">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Margin="0 400 0 0" Width="234">
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0"
+                                             Kind="Password"
+                                             Foreground="{Binding ElementName=password, Path=BorderBrush}"
+                                             VerticalAlignment="Center">
+
+                    </materialDesign:PackIcon>
+                    <TextBox
+                        Name="password"
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        materialDesign:HintAssist.Hint="Пароль"
+                        Width="199" Height="40"
+                        Text="{Binding Path=password}">
                     </TextBox>
                 </StackPanel>
 
             </Grid>
 
 
-
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 -120"  Width="300">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0 -120" Width="300">
                 <Button Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Height="40" Width="80" 
+                        Height="40" Width="80"
                         HorizontalAlignment="Left"
                         Margin="40 0"
-                        Name="back" Click="back_Click"
-                        >Назад</Button>
+                        Name="back" Click="back_Click">
+                    Назад
+                </Button>
                 <Button Style="{StaticResource MaterialDesignFlatSecondaryDarkButton}"
                         materialDesign:ButtonAssist.CornerRadius="20"
-                        Height="40" Width="120" 
+                        Height="40" Width="120"
                         HorizontalAlignment="Right"
-                        Name="companyStore" Click="companyStore_Click"
-                        >Сохранить</Button>
+                        Name="companyStore" Click="companyStore_Click">
+                    Сохранить
+                </Button>
             </Grid>
 
         </Grid>

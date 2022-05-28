@@ -20,17 +20,18 @@ namespace HR_Department.views.layouts
     /// </summary>
     public partial class AdminCreateWindow : Window
     {
-
         private teams _currentTeams = new teams();
+
         public AdminCreateWindow(teams selectTeams)
         {
             InitializeComponent();
-            
+
             if (selectTeams != null)
                 _currentTeams = selectTeams;
 
             DataContext = _currentTeams;
 
+            DBlist.ItemsSource = HR_DepartmentEntities1.GetContext().teams.ToList();
         }
 
         private void CloseLogin(object sender, MouseButtonEventArgs e)
@@ -47,7 +48,6 @@ namespace HR_Department.views.layouts
 
         private void companyStore_Click(object sender, RoutedEventArgs e)
         {
-
             StringBuilder errors = new StringBuilder();
 
             if (string.IsNullOrWhiteSpace(_currentTeams.firstName))
@@ -66,6 +66,7 @@ namespace HR_Department.views.layouts
                 MessageBox.Show(errors.ToString());
                 return;
             }
+
             if (_currentTeams.id == 0)
                 HR_DepartmentEntities1.GetContext().teams.Add(_currentTeams);
             try
@@ -77,12 +78,18 @@ namespace HR_Department.views.layouts
             {
                 MessageBox.Show(ex.Message.ToString());
             }
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+        }
+
+        private void Grid_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
     }
 }

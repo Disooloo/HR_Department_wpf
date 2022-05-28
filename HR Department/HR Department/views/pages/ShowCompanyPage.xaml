@@ -1,48 +1,47 @@
 ﻿<Page x:Class="HR_Department.views.pages.ShowCompanyPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:HR_Department.views.pages"
-      mc:Ignorable="d" 
-       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Height="685" Width="1030"
       Title="ShowCompanyPage">
 
     <Grid>
-       
+
         <!--
         <materialDesign:Card Grid.Column="2">
             <Image Source="/Assets/img/chtmmgm.png"  />
         </materialDesign:Card>
         -->
 
-        
 
-      <materialDesign:Card Grid.Column="1" 
-                           Height="75" UniformCornerRadius="20" 
-                           VerticalAlignment="Top" Margin="20 10">
-            <Border >
-                <Grid > 
+        <materialDesign:Card Grid.Column="1"
+                             Height="75" UniformCornerRadius="20"
+                             VerticalAlignment="Top" Margin="20 10">
+            <Border>
+                <Grid>
                     <Grid>
                         <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#673AB7" Text="{Binding Path=companyName}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}" HorizontalAlignment="Left"
-                                   VerticalAlignment="Center" Margin="10 0"/>
+                                   Style="{StaticResource MaterialDesignHeadline4TextBlock}" HorizontalAlignment="Left"
+                                   VerticalAlignment="Center" Margin="10 0" />
                     </Grid>
                     <Grid>
-                        <TextBlock Grid.Row="0" Text="Руководитель: " 
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" FontSize="20" Margin="150 0" VerticalAlignment="Center"/>
-                        
-                        <TextBlock Grid.Row="0" Text="{Binding Path=responsible}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                        <TextBlock Grid.Row="0" Text="Руководитель: "
+                                   Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                   HorizontalAlignment="Right" FontSize="20" Margin="150 0" VerticalAlignment="Center" />
 
-                        <materialDesign:PackIcon                                       
-                                         Kind="Circle" HorizontalAlignment="Right" Margin="0 15 4 0" 
-                                         Foreground="{Binding ElementName=companyName, Path=BorderBrush}"
-                                         VerticalAlignment="Center" >
+                        <TextBlock Grid.Row="0" Text="{Binding Path=responsible}"
+                                   Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20" />
+
+                        <materialDesign:PackIcon
+                            Kind="Circle" HorizontalAlignment="Right" Margin="0 15 4 0"
+                            Foreground="{Binding ElementName=companyName, Path=BorderBrush}"
+                            VerticalAlignment="Center">
 
                         </materialDesign:PackIcon>
                     </Grid>
@@ -51,86 +50,100 @@
         </materialDesign:Card>
 
         <materialDesign:Card Height="450" UniformCornerRadius="20"
-            Grid.Column="1" HorizontalAlignment="Left" Width="990"
-            VerticalAlignment="Top" Margin="20 100" >
-            <Border >
+                             Grid.Column="1" HorizontalAlignment="Left" Width="990"
+                             VerticalAlignment="Top" Margin="20 100">
+            <Border>
                 <Grid>
                     <StackPanel>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Адрес компании: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=address}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Номер телефона: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=phone}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Email: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=email}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Сайт: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=site}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Вакансий: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=id_vacancy}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Всего сотрудников компании: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=full_team_count}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
                         <Grid Margin="0 10">
                             <Grid>
                                 <TextBlock Grid.Row="0" Text="Описание: "
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
 
                                 <TextBlock Grid.Row="0" Text="{Binding Path=description}"
-                       Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-                       HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0" FontSize="20"  />
+                                           Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+                                           HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20 0"
+                                           FontSize="20" />
                             </Grid>
                         </Grid>
 
@@ -143,7 +156,6 @@
             </Border>
         </materialDesign:Card>
 
-       
 
         <Grid Grid.Column="1" VerticalAlignment="Center" Height="218" Margin="0,234,0,233">
             <Grid.RowDefinitions>
@@ -154,13 +166,6 @@
             </Grid.RowDefinitions>
 
 
-
-
-            
-
-
-
-       
         </Grid>
 
     </Grid>

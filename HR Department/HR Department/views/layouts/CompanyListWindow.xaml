@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:HR_Department.views.layouts"
         mc:Ignorable="d"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
- 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        Icon="/Assets/img/logo.png"
         AllowsTransparency="True"
         Title="MainWindow" Height="685" Width="1030"
         ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
@@ -16,39 +17,39 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                
+
             </ResourceDictionary.MergedDictionaries>
 
             <Style x:Key="OptionBorderStyle" TargetType="{x:Type Border}">
-                <Setter Property="CornerRadius" Value="15"/>
-                <Setter Property="Height" Value="30"/>
+                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Height" Value="30" />
             </Style>
 
             <Style TargetType="{x:Type Path}">
                 <!--<Setter Property="Height" Value="15"/>
                 <Setter Property="Width" Value="15"/>-->
-                <Setter Property="Fill" Value="#9AA8AE"/>
-                <Setter Property="Stretch" Value="Uniform"/>
+                <Setter Property="Fill" Value="#9AA8AE" />
+                <Setter Property="Stretch" Value="Uniform" />
             </Style>
 
             <Style TargetType="{x:Type TreeViewItem}">
-                <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Foreground" Value="#41535A"/>
-                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="#41535A" />
+                <Setter Property="FontWeight" Value="Normal" />
 
                 <Style.Triggers>
                     <Trigger Property="IsSelected" Value="True">
-                        <Setter Property="Foreground" Value="#41535A"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Foreground" Value="#41535A" />
+                        <Setter Property="FontWeight" Value="Bold" />
                     </Trigger>
                 </Style.Triggers>
             </Style>
 
             <Style x:Key="menuButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-                <Setter Property="Height" Value="15"/>
-                <Setter Property="Width" Value="15"/>
-                <Setter Property="Margin" Value="2,0"/>
-                <Setter Property="Opacity" Value=".7"/>
+                <Setter Property="Height" Value="15" />
+                <Setter Property="Width" Value="15" />
+                <Setter Property="Margin" Value="2,0" />
+                <Setter Property="Opacity" Value=".7" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Button}">
@@ -59,7 +60,7 @@
                             </Border>
                             <ControlTemplate.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="Opacity" Value="1" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -70,90 +71,91 @@
     </Window.Resources>
     <Grid Background="#FFEEEEEE">
         <Grid.RowDefinitions>
-            <RowDefinition Height="73*"/>
-            <RowDefinition Height="612*"/>
+            <RowDefinition Height="73*" />
+            <RowDefinition Height="612*" />
         </Grid.RowDefinitions>
         <Border
-        CornerRadius="15"
-        Background="#EEF3F5">
+            CornerRadius="15"
+            Background="#EEF3F5">
             <Grid Margin="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
                     <!--Menu-->
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
                     <!--Option Buttons-->
-                    <RowDefinition/>
+                    <RowDefinition />
                     <!--Download List-->
                 </Grid.RowDefinitions>
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <!--Logo-->
                     <Image
-                    Source="/assets/img/logo.png"
-                    Height="30"
-                    Width="30" />
+                        Source="/assets/img/logo.png"
+                        Height="30"
+                        Width="30" />
 
                     <!--Menu-->
                     <Menu
-                    Grid.Column="1"
-                    Margin="10,0"
-                    FontSize="15"
-                            Foreground="#41535A"
-                    VerticalAlignment="Center"
-                    Background="Transparent">
+                        Grid.Column="1"
+                        Margin="10,0"
+                        FontSize="15"
+                        Foreground="#41535A"
+                        VerticalAlignment="Center"
+                        Background="Transparent">
                         <MenuItem
-                        Padding="20,0"
-                    Header="Файл">
+                            Padding="20,0"
+                            Header="Файл">
 
                             <MenuItem
-                        Padding="20,0"
-                            Background="#EEF3F5"
-                            Header="Лицензия" />
+                                Padding="20,0"
+                                Background="#EEF3F5"
+                                Header="Лицензия" />
 
                             <MenuItem
-                        Padding="20,0"
-                            Background="#EEF3F5"
-                            Header="Параметры" >
-                               
-                            </MenuItem>
-
-                            <MenuItem
-                        Padding="20,0"
-                            Background="#EEF3F5"
-                            Header="Помощь" >
+                                Padding="20,0"
+                                Background="#EEF3F5"
+                                Header="Параметры">
 
                             </MenuItem>
 
                             <MenuItem
-                        Padding="20,5"
-                            Background="#EEF3F5"
-                            Header="Выйти" />
+                                Padding="20,0"
+                                Background="#EEF3F5"
+                                Header="Помощь"
+                                MouseDown="UIElement_OnMouseDownHelp">
+
+                            </MenuItem>
+
+                            <MenuItem
+                                Padding="20,5"
+                                Background="#EEF3F5"
+                                Header="Выйти"
+                                MouseDown="UIElement_OnMouseDown" />
                         </MenuItem>
 
                         <MenuItem
-                        Padding="20,5"
-                            Background="#EEF3F5"
-                            Header="Меню" >
-
-                            <MenuItem
-                        Padding="20,5"
-                            Background="#EEF3F5"
-                            Header="Компании" 
-                                Name="company"
-                                Click="company_Click">
-
-                                </MenuItem>
-
-                            <MenuItem
                             Padding="20,5"
                             Background="#EEF3F5"
-                            Header="Вакансии"
+                            Header="Меню">
+
+                            <MenuItem
+                                Padding="20,5"
+                                Background="#EEF3F5"
+                                Header="Компании"
+                                Name="company"
+                                Click="company_Click">
+                            </MenuItem>
+
+                            <MenuItem
+                                Padding="20,5"
+                                Background="#EEF3F5"
+                                Header="Вакансии"
                                 Name="vacancy"
                                 Click="vacancy_Click">
                             </MenuItem>
@@ -162,24 +164,27 @@
 
                     </Menu>
 
-                   
+
                     <StackPanel
-                    Grid.Column="2"
-                    Orientation="Horizontal">
+                        Grid.Column="2"
+                        Orientation="Horizontal">
 
                         <Button
-                        HorizontalAlignment="Right"
-                        Background="Transparent" BorderBrush="{x:Null}" Cursor="Hand"
-                        Name="Minimase" Click="Minimase_Click">
-                            <materialDesign:PackIcon Kind="WindowMinimize" Width="25" Height="25" Cursor="Hand" Foreground="#000" ></materialDesign:PackIcon>
+                            HorizontalAlignment="Right"
+                            Background="Transparent" BorderBrush="{x:Null}" Cursor="Hand"
+                            Name="Minimase" Click="Minimase_Click">
+                            <materialDesign:PackIcon Kind="WindowMinimize" Width="25" Height="25" Cursor="Hand"
+                                                     Foreground="#000">
+                            </materialDesign:PackIcon>
                         </Button>
 
                         <Button
-                        HorizontalAlignment="Right"
-                        Background="Transparent" BorderBrush="{x:Null}" Cursor="Hand"
-                        Name="close" Click="close_Click"
-                        >
-                            <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand" Foreground="#000" ></materialDesign:PackIcon>
+                            HorizontalAlignment="Right"
+                            Background="Transparent" BorderBrush="{x:Null}" Cursor="Hand"
+                            Name="close" Click="close_Click">
+                            <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand"
+                                                     Foreground="#000">
+                            </materialDesign:PackIcon>
                         </Button>
                     </StackPanel>
                 </Grid>
@@ -187,15 +192,12 @@
 
             </Grid>
         </Border>
-    
-        
-        
-        <Frame Background="#FFEEEEEE" Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
-    
-        
-        
-        
-        
+
+
+        <Frame Background="#FFEEEEEE" Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"
+               ContentRendered="MainFrame_ContentRendered" />
+
+
     </Grid>
-    
+
 </Window>
