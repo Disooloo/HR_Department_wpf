@@ -27,7 +27,6 @@
         <materialDesign:PackIcon Kind="close" Width="25" Height="25" Cursor="Hand" MouseDown="CloseLogin"
                                  Margin="5,5,0,0">
         </materialDesign:PackIcon>
-
         <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition />

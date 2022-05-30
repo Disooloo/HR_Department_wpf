@@ -56,7 +56,7 @@ namespace HR_Department.views.pages
             {
                 HR_DepartmentEntities1.GetContext().SaveChanges();
                 MessageBox.Show("Данные сохранены");
-                Manager.MainFrame.Navigate(new CompanyListPage());
+                Manager.MainFrame.GoBack();
             }
             catch (Exception ex)
             {

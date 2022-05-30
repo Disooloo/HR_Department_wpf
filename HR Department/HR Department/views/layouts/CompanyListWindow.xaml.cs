@@ -57,7 +57,8 @@ namespace HR_Department.views.layouts
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult res = MessageBox.Show("Вы точно хотите выйти ?", "Выход", MessageBoxButton.YesNo,
+            MessageBoxResult res = MessageBox.Show("Вы точно хотите выйти ?", "Выход", 
+                    MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
             if (res == MessageBoxResult.No)
                 e.Cancel = true;
@@ -67,17 +68,12 @@ namespace HR_Department.views.layouts
         {
             /* if (MainFrame.CanGoBack)
              {
-                 
                  //bnt_back.Visibility = Visibility.Visible; // на будующее, если нужны будут хлебные крошки
              }
              else
              {
                  //bnt_back.Visibility = Visibility.Hidden;
              }*/
-        }
-
-        private void MenuItem_MouseDown(object sender, MouseButtonEventArgs e)
-        {
         }
 
 
@@ -100,6 +96,11 @@ namespace HR_Department.views.layouts
         {
             HelpWindow helpWindow = new HelpWindow();
             helpWindow.Show();
+        }
+
+        private void Copyrate_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("HR department © 2022");
         }
     }
 }

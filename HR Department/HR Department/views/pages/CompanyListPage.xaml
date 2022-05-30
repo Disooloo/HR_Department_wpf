@@ -18,7 +18,6 @@
 
 
         <Grid Name="conentMain" Visibility="Hidden">
-
             <Grid.RowDefinitions>
                 <RowDefinition Height="13*" />
                 <RowDefinition Height="62*" />

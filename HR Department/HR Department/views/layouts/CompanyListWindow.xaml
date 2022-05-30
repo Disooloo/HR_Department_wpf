@@ -69,6 +69,7 @@
             </Style>
         </ResourceDictionary>
     </Window.Resources>
+
     <Grid Background="#FFEEEEEE">
         <Grid.RowDefinitions>
             <RowDefinition Height="73*" />
@@ -86,7 +87,6 @@
                     <RowDefinition />
                     <!--Download List-->
                 </Grid.RowDefinitions>
-
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30" />
@@ -111,11 +111,12 @@
                         <MenuItem
                             Padding="20,0"
                             Header="Файл">
-
                             <MenuItem
                                 Padding="20,0"
                                 Background="#EEF3F5"
-                                Header="Лицензия" />
+                                Header="Лицензия"
+                                Name="copyrate"
+                                MouseDown="Copyrate_OnMouseDown" />
 
                             <MenuItem
                                 Padding="20,0"
@@ -193,11 +194,9 @@
             </Grid>
         </Border>
 
-
-        <Frame Background="#FFEEEEEE" Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"
+        <Frame Background="#FFEEEEEE" Grid.Row="1" Name="MainFrame" 
+               NavigationUIVisibility="Hidden"
                ContentRendered="MainFrame_ContentRendered" />
 
-
     </Grid>
-
 </Window>

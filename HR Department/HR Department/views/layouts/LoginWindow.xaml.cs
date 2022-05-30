@@ -56,7 +56,6 @@ namespace HR_Department.views.layouts
               admin = "Админ";
 
 
-
             CompanyListWindow companyWindow = new CompanyListWindow();
 
             teams authUser = null;
@@ -88,9 +87,6 @@ namespace HR_Department.views.layouts
             {
                 MessageBox.Show("Неверный логин или пароль");
             }
-
-            
-
         }
     }
 }
